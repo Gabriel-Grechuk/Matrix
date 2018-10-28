@@ -15,42 +15,51 @@ Well, if you want to get the binary file in the same folder of the project, use
 
 and enjoy it!
 
+<br>
+
 ### Builds + Local
 So, if you want to keep the object files, and get the binary, use
 
     make build
 
-and, if you want to clean them later, use
+and if you want to clean them later, use
 
     make clan
 
 **But this one will keep the executable.*
 
-### Complete Install on linux.
+<br>
+
+### Build and Install on linux.
 To just install it on linux, use
 
     sudo make install-linux
 
 and then, you can use it every where!
 
-to uninstall use
+To uninstall use
 
     sudo make uninstall-linux
 
+<br>
 
 ### Build and Install on Windows.
->Well, I'll assume that you have the ***make*** and ***g++*** installed in your computer, if you doesn't, this will not work foy you
+>***This one are not recommended! Don't use it for now, I haven't tester it yet!***
+
+
+
+>And, I'll assume that you have the ***make*** and ***g++*** installed in your computer, if you doesn't, this will not work for you
 
 Use make to install
 
     make install-windows
 
-Or, you if you have the MinGW make, then use
+Or, if you have the MinGW make, then use
 
     mingw32-make install-windows
 
 
-and 
+To uninstall it from your system.
 
     make uninstall-windows
 
@@ -58,7 +67,7 @@ or
 
     mingw32-make uninstall-windows
 
-to uninstall it from your system.
+<br>
 
 ---
 
