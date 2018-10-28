@@ -44,7 +44,7 @@ To uninstall use
 <br>
 
 ### Build and Install on Windows.
->***This one are not recommended! Don't use it for now, I haven't tester it yet!***
+>***This one are not recommended! Don't use it for now, I haven't tested it yet!***
 
 
 
