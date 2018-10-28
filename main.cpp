@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
     // Verificando a integridade das entradas.
     if(argc == 1)
     {
-        cout << "É preciso entrar os tamanho da matriz." << endl;
+        cout << "You must enter the dimensions of the matrix." << endl
+             << "Ex: \"Matrix\" 3 for 3x3 matrix." << endl;
         return -1;
     }
 
@@ -35,10 +36,10 @@ int main(int argc, char *argv[])
     {
         for(int i = 0; i < size; i++)
         {
-            cout << "Linha " << i + 1 << ": " << endl;
+            cout << "Line " << i + 1 << ": " << endl;
             for(int j = 0; j < size; j++)
             {
-                cout << "Entre o elemento " << j + 1 << ": ";
+                cout << "Enter the element " << j + 1 << ": ";
                 cin >> Mat(i, j);
             }
             cout << endl;
@@ -49,6 +50,6 @@ int main(int argc, char *argv[])
     Mat.print();
     cout << endl;
 
-    cout << "Determinante da matriz é: " << Mat.getDet() << endl; 
+    cout << "The determinant of the matrix is: " << Mat.getDet() << endl; 
     return 0;
 }
