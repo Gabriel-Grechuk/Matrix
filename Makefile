@@ -19,19 +19,55 @@ OBJ_PATH = obj
 OBJ_FILES = main.o matrix.o
 
 # Binary file
-EXEC = Matrix
+EXEC = matrix
+# For windows
+WIN_EXEC = matrix.exe
+
+# Path to install the binary file
+# LINUX
+INSTALL_PATH_LINUX = /usr/local/bin
+
+#Path to install the biinary file
+# WINDOWS
+INSTALL_PATH_WINDOWS = %ProgramFiles%\matrix
 
 
 
 # Rules to build.
 #################
 
-all: build clean
+local: build clean
 
 build: $(OBJ_FILES) $(EXEC)
 
 clean:
+	@echo "Cleaning residual files"
 	@rm -r $(OBJ_PATH)
+	@echo "Done!"
+
+
+
+# Intalation on Linux
+install-linux: all
+	@sudo mv $(EXEC) $(INSTALL_PATH_LINUX)
+	@echo "Aplication Installed!"
+
+uninstall-linux:
+	@sudo rm "$(INSTALL_PATH_LINUX)/$(EXEC)"
+	@echo "Aplication uninstalled."
+
+
+
+# Instalation on Windows
+install-windows: $(OBJ_FILES) $(WIN_EXEC) clean
+	@mkdir -p $(INSTALL_PATH_WINDOWS)
+	@mv matrix $(INSTALL_PATH_WINDOWS)
+	#@set PATH=%PATH%;$(INSTALL_PATH_WINDOWS)
+	@echo "Aplication Installed!"
+
+uninstall-windows:
+	@rm  $(INSTALL_PATH_WINDOWS)\$(WIN_EXEC)
+	@echo "Aplication uninstalled."
 
 
 
@@ -40,18 +76,24 @@ clean:
 
 # main.o
 main.o:  main.cpp
-	@echo "Buildin main.o\n"
+	@echo "Buildin main.o - 33%"
 	@mkdir -p $(OBJ_PATH)
-	$(CC) -c $< -o $(OBJ_PATH)/$@
+	@$(CC) -c $< -o $(OBJ_PATH)/$@
 
 # matrix.o
-matrix.o: matrix/matrix.cpp matrix/matrix.h
-	@echo "Building matrix.o\n"
+matrix.o: matrix_class/matrix.cpp matrix_class/matrix.h
+	@echo "Building matrix.o - 66%"
 	@mkdir -p $(OBJ_PATH)
-	$(CC) -c $< -o $(OBJ_PATH)/$@
+	@$(CC) -c $< -o $(OBJ_PATH)/$@
 
 
 # matrix (binary file)
 $(EXEC): $(OBJ_PATH)/main.o $(OBJ_PATH)/matrix.o
-	@echo "Building $(EXEC)\n"
-	$(CC) $^ -o $(EXEC)
+	@echo "Building $(EXEC) - 100%"
+	@$(CC) $^ -o $(EXEC)
+
+
+# matrix (binary file)
+$(WIN_EXEC): $(OBJ_PATH)/main.o $(OBJ_PATH)/matrix.o
+	@echo "Building $(WIN_EXEC) - 100%"
+	@$(CC) $^ -o $(WIN_EXEC)
