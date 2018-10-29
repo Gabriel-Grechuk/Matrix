@@ -45,10 +45,12 @@ clean:
 	@rm -r $(OBJ_PATH)
 	@echo "Done!"
 
+.PHONY: install-linux local
+
 
 
 # Intalation on Linux
-install-linux: all
+install-linux: local
 	@sudo mv $(EXEC) $(INSTALL_PATH_LINUX)
 	@echo "Aplication Installed!"
 
