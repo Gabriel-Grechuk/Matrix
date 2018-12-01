@@ -31,6 +31,9 @@ and if you want to clean them later, use
 <br>
 
 ### Build and Install on linux.
+
+> Unfortunately, I can not create a makefile that can install it on MS Windows ... If you know how to do it, feel free to improve my project!
+
 To just install it on linux, use
 
     sudo make install-linux
@@ -40,32 +43,6 @@ and then, you can use it every where!
 To uninstall use
 
     sudo make uninstall-linux
-
-<br>
-
-### Build and Install on Windows.
->***This one are not recommended! Don't use it for now, I haven't tested it yet!***
-
-
-
->And, I'll assume that you have the ***make*** and ***g++*** installed in your computer, if you doesn't, this will not work for you
-
-Use make to install
-
-    make install-windows
-
-Or, if you have the MinGW make, then use
-
-    mingw32-make install-windows
-
-
-To uninstall it from your system.
-
-    make uninstall-windows
-
-or
-
-    mingw32-make uninstall-windows
 
 <br>
 
