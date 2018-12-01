@@ -7,13 +7,22 @@ Well, if you are tring to calculate the determinant of a square matrix, this pro
 
 ## Building!
 
+### Tools For Build
+You just need the GNU ***make*** and the GNU ***g++*** compiler!
+If you are using the MinGW environment, you will need to use make as ***mingw32-make***
 
 ### Local
 Well, if you want to get the binary file in the same folder of the project, use
 
     make local
 
-and enjoy it!
+on Windows, use
+
+    make local-windows
+or
+    mingw32-make local-windows
+
+And enjoy it!
 
 <br>
 
@@ -22,11 +31,19 @@ So, if you want to keep the object files, and get the binary, use
 
     make build
 
+on Windows, use
+
+    make build-windows
+or
+    mingw32-make build-windows
+
 and if you want to clean them later, use
 
     make clan
+or
+    mingw32-make clean
 
-**But this one will keep the executable.*
+**But they will keep the executable binary.**
 
 <br>
 
