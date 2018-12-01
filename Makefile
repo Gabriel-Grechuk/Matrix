@@ -27,25 +27,32 @@ WIN_EXEC = matrix.exe
 # LINUX
 INSTALL_PATH_LINUX = /usr/local/bin
 
-#Path to install the biinary file
-# WINDOWS
-INSTALL_PATH_WINDOWS = %ProgramFiles%\matrix
-
 
 
 # Rules to build.
 #################
 
+# Local Compilation Linux.
 local: build clean
 
+# Building For Linux.
 build: $(OBJ_FILES) $(EXEC)
 
+
+# Local Compilation Windows.
+local-windows: build-windows clean
+
+# Building for Windows
+build-windows: $(OBJ_FILES) $(WIN_EXEC)
+
+
+# Clear object files.
 clean:
 	@echo "Cleaning residual files"
 	@rm -r $(OBJ_PATH)
 	@echo "Done!"
 
-.PHONY: install-linux local
+.PHONY: install-linux local local-windows
 
 
 
@@ -56,19 +63,6 @@ install-linux: local
 
 uninstall-linux:
 	@sudo rm "$(INSTALL_PATH_LINUX)/$(EXEC)"
-	@echo "Aplication uninstalled."
-
-
-
-# Instalation on Windows
-install-windows: $(OBJ_FILES) $(WIN_EXEC) clean
-	@mkdir -p $(INSTALL_PATH_WINDOWS)
-	@mv matrix $(INSTALL_PATH_WINDOWS)
-	#@set PATH=%PATH%;$(INSTALL_PATH_WINDOWS)
-	@echo "Aplication Installed!"
-
-uninstall-windows:
-	@rm  $(INSTALL_PATH_WINDOWS)\$(WIN_EXEC)
 	@echo "Aplication uninstalled."
 
 
