@@ -19,7 +19,9 @@ Well, if you want to get the binary file in the same folder of the project, use
 on Windows, use
 
     make local-windows
+    
 or
+    
     mingw32-make local-windows
 
 And enjoy it!
@@ -34,13 +36,17 @@ So, if you want to keep the object files, and get the binary, use
 on Windows, use
 
     make build-windows
+    
 or
+    
     mingw32-make build-windows
 
 and if you want to clean them later, use
 
     make clan
+ 
 or
+ 
     mingw32-make clean
 
 **But they will keep the executable binary.**
