@@ -1,4 +1,19 @@
-// Opa, vamo brinca agr
+/******************************************************************************
+ * This class have the objective to store a number and convert it for any kind
+ * of handable for the user. 
+ ******************************************************************************
+ * Copyright (c) 2018 Gabriel Grechuk da Silva Oliveira
+ * 
+ * Under the MIT License. Checkout the LICENSE.txt file.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *****************************************************************************/
 
 #include <cstdlib>
 #include <iostream>
